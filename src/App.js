@@ -15,6 +15,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 export const CryptoContext = createContext();
+export const comma = (number) => Intl.NumberFormat("en-IN").format(number);
 
 function App() {
   const [currency, setCurrency] = useState("INR");
