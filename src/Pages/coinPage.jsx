@@ -30,7 +30,7 @@ const CoinPage = () => {
       justifyContent: 'center',
       height: 200,
       width: 200,
-      marginLeft: 180,
+      marginLeft: 110,
     },
     sideBar: {
       width: '30%',
@@ -116,9 +116,8 @@ const CoinPage = () => {
           </span>
         </div>
       </div>
-      <div className={classes.chart}>
-        <CoinChart coint={coin} />
-      </div>
+
+      <CoinChart coin={coin} />
     </div>
   )
 }
