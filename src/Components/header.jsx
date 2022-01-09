@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
   AppBar,
   Toolbar,
@@ -10,8 +10,11 @@ import {
 } from '@material-ui/core'
 import { makeStyles, ThemeProvider } from '@material-ui/styles'
 import { useNavigate } from 'react-router-dom'
+import { CryptoContext } from '../App'
 
 const Header = () => {
+  const { currency, setCurrency } = useContext(CryptoContext)
+
   const useStyles = makeStyles(() => ({
     title: {
       color: 'gold',
@@ -19,17 +22,15 @@ const Header = () => {
       fontFamily: 'Montserrat',
       fontWeight: 'bold',
       flex: '1',
+      fontSize: '20px',
     },
   }))
 
-  const navigate = useNavigate()
-
+  const navigate = useNavigate() // useHistory has been repalced by useNavigate in React-Router-Dom v6
   const classes = useStyles()
+
   const darkTheme = createTheme({
     palette: {
-      primary: {
-        main: '#fff',
-      },
       type: 'dark',
     },
   })
@@ -43,11 +44,13 @@ const Header = () => {
               Crypto Market
             </Typography>
             <Select
+              value={currency}
+              onChange={(e) => setCurrency(e.target.value)}
               variant="outlined"
               style={{
                 width: 100,
                 height: 40,
-                marginLeft: 15,
+                marginRight: 15,
               }}
             >
               <MenuItem value={'INR'}> INR </MenuItem>
