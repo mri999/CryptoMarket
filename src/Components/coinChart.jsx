@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState, useContext } from 'react'
 import Chart from 'chart.js/auto'
 import { Line } from 'react-chartjs-2'
