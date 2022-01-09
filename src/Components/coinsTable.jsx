@@ -171,7 +171,7 @@ const CoinsTable = () => {
                           </div>
                         </TableCell>
                         <TableCell align="right" className={classes.columnData}>
-                          {symbol} {comma(row.current_price.toFixed(2))}
+                          {symbol} {comma(row.current_price.toFixed(12))}
                         </TableCell>
                         <TableCell
                           align="right"
